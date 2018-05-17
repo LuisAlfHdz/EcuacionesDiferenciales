@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<title>Ec. dif. 2do ordern</title>
+
+	<!--Cositas para que las cosas de bootstrap funcionen-->
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<script type="text/javascript" src="cositas.js"></script>
+<link rel="stylesheet" href="styles.css">
+<body id="grad1">
+
+		<nav class="navbar navbar-default" style="background-color:rgb(0, 0, 0)">
+				<div class="container-fluid" >
+				  <div class="navbar-header">
+					<a class="navbar-brand names" ><font color="white">Solucionador ecuaciones diferenciales homogeneas de segundo orden. </font></a>
+					<br><a class="navbar-brand names"><font color="white">Autores: Díaz Gómez Alfredo Tonatiuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hernandez Buenrostro Poncho &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1CV7</font> </a>
+				</div>
+
+				</div>
+			  </nav>
+
+	<div align="center"><h2><font color="white">Solucionador ecuaciones diferenciales homogeneas de segundo orden.</font></h2></div>	
+		<p class="infoTypo">	 
+			<br><br>
+			&nbsp;&nbsp;El presente sistema tiene como objetivo resolver ecuacions diferenciales homogeneas de segundo orden. 
+			<br>&nbsp;&nbsp;Para iniciar se debe llenar el formulario con los coeficientes de la ec. dif.
+			 y presionar el botón que se encuentra ahí.
+			<br>&nbsp;&nbsp;Cuando se desee pasar al siguiente paso, se debe presionar el boton que aparece al momento de que el nuevo paso aparece.
+			<br>&nbsp;&nbsp;Este sistema no solo resuelve el ejercicio propuesto, si no que da una breve explicación de cómo se hace.
+		</p>	
+	<div align="center">
+		<table style="border: 5px" id="tablePrin">
+			<tr>
+			<th colspan="2" class="titles">
+				Ecuacion diferencial a resolver
+			</th>
+			</tr>
+			<th class="desarrollo">
+
+				<form class="form-inline" action="/action_page.php">
+					<div class="form-group">
+					<input type="number" class="form-control" id="y2" name="y2">
+					<label for="email">y''</label>		  
+					</div>
+					<div class="form-group">
+					<input type="number" class="form-control" id="y1" name="y1">
+					<label for="pwd">y'</label>		  
+					</div>
+					<div class="form-group">
+						<input type="number" class="form-control" id="y" name="y">
+						<label for="pwd">y = 0</label>			
+					</div>
+					<input type="button" value="Puchurrame" name="boton" id="btn" class="btn btn-default" onclick="resolver(document.getElementById('y2').value,document.getElementById('y1').value,document.getElementById('y').value)">
+				</form>
+
+			</th>
+			<th width="38%" class="infoPaso" >
+				Aquí se plantea la ecuación diferencial de segundo orden homogénea.
+			</th>		
+			<tr>
+				<div id="seccion2Paso"  style="display:none;" class="answer_list" >				
+					<th colspan="2" class="titles" ><div id="EcCac"></div></th>
+				</div>
+			</tr>
+				<th class="desarrollo">
+
+					<div id="seccion2Problema"  style="display:none;" class="answer_list" style="position: relative">	
+						<div id="ecuacion" class="ejer"></div> 
+						<br><br><br><br><br><input type="button" value="Puchurrame" name="boton" id="btn" class="btn btn-default" onclick="showTableSection(3)">
+					</div>
+
+				</th>
+				<th class="infoPaso">
+					<div id="seccion2Explicacion"  style="display:none;" class="answer_list" >		
+						Se plantea la ecuación caracterísitica de la ecuación dada.
+						<br>Esta se obtiene tomando y = e<sup>mx</sup>
+						<br>Se deriva n veces(En este caso n = 2). Estas derivadas, junto con la forma planteada, se sustituyen en la ecuacón diferencial.
+						Entonces tenemos: 
+						<br> <p class="text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a<sub>2</sub>m<sup>2</sup>e<sup>mx</sup> + a<sub>1</sub>me<sup>mx</sup> + a<sub>0</sub>e<sup>mx</sup> = 0 </p>
+						Factorizando términos comunes, en nuestro caso se obtiene: 
+						<br> <p class="text-primary"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e<sup>mx</sup>[a<sub>2</sub>m<sup>2</sup> + a<sub>1</sub>m + a<sub>0</sub>] = 0 </p>
+						Como e<sup>mx</sup> ≠ 0 se plantea la ecuación caracteristica como: 
+						<br><p class="text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a<sub>2</sub>m<sup>2</sup> + a<sub>1</sub>m + a<sub>0</sub> = 0 </p>
+					</div>
+				</th>
+				
+			<tr>
+					<th colspan="2" class="titles">
+						<div id="seccion3Paso"  style="display:none;" class="answer_list" >							
+							<div id="raices"></div>
+						</div>
+					</th>
+			</tr>
+				<th class="desarrollo">
+					<div id="seccion3Problema"  style="display:none;" class="answer_list" >	
+						Aquí es lo que necesito, Poncho. Usa esos div si te sirven. xD (Ve el código)					
+						<div id="alfa" class="ejer"></div>
+						<div id="beta" class="ejer"></div>
+						<div id="m1" class="ejer"></div>
+						<div id="m2" class="ejer"></div>
+						<br><br><br><br><br><br><input type="button" value="Puchurrame" name="boton" id="btn" class="btn btn-default" onclick="showTableSection(4)">						
+					</div>
+				</th>
+				<th class="infoPaso" >
+					<div id="seccion3Explicacion"  style="display:none;" class="answer_list"  >						
+						Una vez planteada la ecuación caracterísitica, se le da el tratamiento "de siempre" para encontrar raíces en de una ecuación de segundo grado.
+						<br>Se puede factorizar, completar el trinomio cuadrado perfecto, o utilizar la fórmula general.
+						<br>En el caso de este sistema, se utiliza la fórmula general.
+
+						<br><br>Es importante muy importante tomar en cuenta que si las raíces de la ecuación caracterísitca son imaginarias, se debe dar el siguiente tratamiento: 
+						<p class="text-primary"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; α será igual a la parte real de la solución. 
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Por otro lado β será la parte imaginaria. </p>
+					</div>
+				</th>
+			<tr>
+				<th colspan="2" class="titles">
+					<div id="seccion4Paso"  style="display:none;" class="answer_list" >		
+						<div id="solucion"></div>
+					</div>						
+				</th>
+			</tr>
+				<th class="desarrollo">
+					<div id="seccion4Problema"  style="display:none;" class="answer_list" >	
+						<div id="yc1" class="ejer"></div>
+						<br><div id="yc2" class="ejer"></div>
+						<br><br><br><br><input type="button" value="Puchurrame" name="boton" id="btn" class="btn btn-default" onclick="showTableSection(5)">						
+					</div>					
+
+				</th>
+				<th class="infoPaso">
+					<div id="seccion4Explicacion"  style="display:none;" class="answer_list" >		
+						Se obtienen las soluciones linealmente indepentiendes.
+						<br>En el caso de que las raíces de la ecuación característica sean reales, las soluciones se plantean de la siguiente manera: 
+						 <p class="text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y<sub>c1</sub> = e<sup>m<sub>1</sub>x</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y<sub>c2</sub> = e<sup>m<sub>2</sub>x</sup> </p>
+						Para nuestro caso, si las raíces son iguales, entonces las soluciones linealmente independientes serán: 
+						 <p class="text-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y<sub>c1</sub> = e<sup>m<sub>1</sub>x</sup> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y<sub>c2</sub> = xe<sup>m<sub>1</sub>x</sup> </p>
+						<br> Por otro lado, si las raíces son imaginarias, las soluciones se plantean de la siguiente forma:
+						 <p class="text-primary"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y<sub>c1</sub> = e<sup>αx</sup>cos(βx)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y<sub>c2</sub> = e<sup>αx</sup>sen(βx) </p>
+					</div>
+				</th>
+			<tr>
+				<th colspan="2" class="titles">
+					<div id="seccion5Paso"  style="display:none;" class="answer_list" >	
+						<div id="solGen"></div>
+					</div>
+				</th>
+			</tr>
+				<th class="desarrollo">
+					<div id="seccion5Problema"  style="display:none;" class="answer_list" >	
+						<div id="yc" class="ejer"></div>	
+					</div>				
+
+				</th>
+				<th class="infoPaso">
+					<div id="seccion5Explicacion"  style="display:none;" class="answer_list" >						
+						Por último, para obtener la solución general, las soluciones linealmente dependientes se multiplican por 2 constantes arbitrarias diferentes(Generalmente denotadas como C<sub>1</sub> y C<sub>2</sub>) y de esta manera se suman.
+					</div>
+					</th>
+		</table>	
+	</div>
+
+
+</body>
+</html>

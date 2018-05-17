@@ -1,0 +1,44 @@
+#grad1 {
+			
+    background: rgb(7, 151, 132); /* For browsers that do not support gradients */
+    background: linear-gradient(to right, rgb(3, 196, 138), rgba(20, 122, 218, 0.61)); /* Standard syntax (must be last) */
+}
+
+.titles{
+    border-radius: 5px; 
+    padding: 10px;
+    background:aliceblue;			
+}
+
+.infoPaso{
+    border-radius: 5px;
+    padding: 10px;
+    background: aliceblue;
+}
+
+.desarrollo{
+    border-radius:  5px;
+    padding: 10px;
+    background: rgb(228, 232, 238);
+    font-size: 20px;
+    align-content: space-around;
+}
+
+.infoTypo{
+    font-family: Verdana, 'Trebuchet MS';
+    font-size: 17px;
+    color: rgb(252, 252, 252);
+}
+
+#tablePrin{
+    border-collapse: separate;
+    border-spacing: 15px;
+};
+
+.ejer{
+    color: rgb(53, 53, 53);
+    font-size: 15px;
+    position: absolute;
+    width: 50%;
+}
+
